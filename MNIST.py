@@ -1,6 +1,10 @@
+'''
+This a basic implimentation of a convolutional neural network
+This code gets about 99.25% accuracy which can be increased by careful artificial expansion of the data
+'''
+
 import numpy as np
 import tensorflow as tf
-#import idx2numpy
 
 from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
@@ -22,8 +26,6 @@ def max_pool_2x1(x):
 x = tf.placeholder(tf.float32, [None,28,28,1])
 y_ = tf.placeholder(tf.float32, [None, 10])
 keep_prob = tf.placeholder(tf.float32)
-#x_image = tf.reshape(x, [-1,28,28,1])
-#x_image = x
 
 W_conv0 = weight_variable([5, 5, 1, 32])
 b_conv0 = bias_variable([32])
